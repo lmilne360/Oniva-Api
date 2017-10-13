@@ -28,10 +28,12 @@ app.get('*', (req, res) => {
 });
 
 // Set port
+/**
 app.set('port', process.env.PORT || 4200);
 
 app.listen(app.get('port'), () => {
   console.log('listening to Port', app.get('port'));
 });
+*/
 
-//app.listen(80, () => console.log("listening on 80"));
+app.listen( process.env.Port || 4200, () => console.log("Server started"));
