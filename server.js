@@ -15,20 +15,21 @@ app.use(bodyParser.urlencoded({
 }));
 
 // Point static path to build folder 'www'
-app.use(express.static(path.resolve(__dirname, 'www')));
+//app.use(express.static(path.resolve(__dirname, 'www')));
 app.use(cors());
 
 // Set our API routes
 app.use('/api', api);
 
 // Catch all other routes and return the index file
+
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'www/index.html'));
+  res.redirect('/api')
 });
 
 // Set port
-app.set('port', process.env.PORT || 80);
-/** */
+app.set('port', process.env.PORT || 4200);
+
 app.listen(app.get('port'), () => {
   console.log('listening to Port', app.get('port'));
 });
