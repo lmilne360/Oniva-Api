@@ -36,4 +36,6 @@ app.listen(app.get('port'), () => {
 });
 */
 
-app.listen( process.env.Port || 4200, () => console.log("Server started"));
+var port = process.env.PORT || 4200;
+
+app.listen(port, () => console.log("App in running on port " + port));
